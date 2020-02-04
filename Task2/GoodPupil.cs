@@ -15,10 +15,10 @@ namespace Task2
         {
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.Write($"{fullName}");
-            Console.ResetColor();
             Read();
             Write();
             Relax();
+            Console.ResetColor();
         }
 
         protected override void Read()

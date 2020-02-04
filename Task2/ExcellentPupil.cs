@@ -19,6 +19,7 @@ namespace Task2
             Read();
             Write();
             Relax();
+            Console.ResetColor();
         }
 
         protected override void Read()
