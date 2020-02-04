@@ -9,12 +9,8 @@ namespace Task2
         BadPupil badPupil = new BadPupil();
         readonly Pupil[] pupil = new Pupil[4];
 
-        int addedPupilsToList;
+        int addedPupilsToList, counter=0;
         string firstFullNamePupilFromList1, secondFullNamePupilFromList2;
-
-        public int AddedPupilsToList { set { addedPupilsToList = value; } }
-        public string FirstFullNamePupilromList { set { firstFullNamePupilFromList1 = value; } }
-        public string SecondFullNamePupilFromList { set { secondFullNamePupilFromList2 = value; } }
 
         public ClassRoom(Pupil pupil1, Pupil pupil2)
         {
@@ -40,15 +36,44 @@ namespace Task2
             pupil[3] = pupil4;
         }
 
-        public Pupil ChooseFromPupilsList()
+        Pupil ChooseFromPupilsList()
         {
-            if (pupil.Length != 4)
+            if (counter!=1)
             {
-                Pupil pupilFromList = new Pupil();
-                Random random = new Random();
-                return pupilFromList;
+                Console.WriteLine($"Вы - учитель.\nВ вашем классе {pupil.Length} человека. На перемене играют ещё двое.\n");
+                //Если в конструкторе нужно доавить четвертого, то заблокировать возможность добавлять двоих учеников
+                Console.Write("Позвать играющи на перемене?\n0 - нет\n1 - одного\n2 - обоих\nМой ответ = ");
+                addedPupilsToList = Int32.Parse(Console.ReadLine());
+                if (addedPupilsToList != 0)
+                {
+                    if (addedPupilsToList == 1)
+                    {
+                        Console.Write("\nИмя и фамилия ребенка через пробел = ");
+                        firstFullNamePupilFromList1 = Console.ReadLine();
+                    }
+                    else
+                    {
+                        Console.Write($"\nИмя и фамилия 1 ребенка через пробел = ");
+                        firstFullNamePupilFromList1 = Console.ReadLine();
+                        Console.Write($"\nИмя и фамилия 2 ребенка через пробел = ");
+                        secondFullNamePupilFromList2 = Console.ReadLine();
+                    }
+                }
             }
-            return null;
+            counter++;
+
+            switch (pupil.Length)
+            {
+                case 3:
+                    if (pupil.Length == 3)
+                        return new Pupil(firstFullNamePupilFromList1); 
+                    else
+                        return new Pupil(secondFullNamePupilFromList2);                     
+                case 4:
+                    return new Pupil(firstFullNamePupilFromList1);                 
+                default:
+                    return null;
+            }
         }
 
         public void GetPupilInformation()
@@ -73,9 +98,11 @@ namespace Task2
                         excellentPupil.FullNameOfPupil = pupil[i].FullName;
                         excellentPupil.Study();
                         break;
-                    //Внести дополнительные case с новичками
                     default:
-                        Console.WriteLine("Ученик не найдем в базе данных.");
+                        //добавить блок if. Если приходит первый, то одно описание, если второй - второе
+                        goodPupil.FullNameOfGoodPupil = pupil[i].FullName;
+                        goodPupil.Study();
+                        //Console.WriteLine("Ученик не найдем в базе данных.");
                         break;
                 }
 
