@@ -6,11 +6,6 @@ namespace Task2
 {
     class BadPupil: Pupil
     {
-        public BadPupil(string pupilFullName): base(pupilFullName)
-        {
-
-        }
-
         public override void Study()
         {
             Console.ForegroundColor = ConsoleColor.Red;
@@ -20,6 +15,8 @@ namespace Task2
             Relax();
             Console.ResetColor();
         }
+
+        public string FullName { get { return fullName; } }
 
         protected override void Read()
         {

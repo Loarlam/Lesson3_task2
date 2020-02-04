@@ -16,6 +16,8 @@ namespace Task2
             Console.ResetColor();
         }
 
+        public string FullName{ get { return fullName; } }
+
         protected override void Read()
         {
             Console.Write(" читает без запинки; ");

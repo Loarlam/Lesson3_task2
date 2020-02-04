@@ -23,6 +23,7 @@ namespace Task2
             pupil[3] = new Pupil("Николай Терещенко");
 
             ClassRoom classRoom = new ClassRoom(pupil[0], pupil[1], pupil[2], pupil[3]);
+            classRoom.GetPupilInformation();
 
             Console.ReadKey();
         }

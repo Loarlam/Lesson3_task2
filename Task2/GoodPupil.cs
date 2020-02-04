@@ -6,11 +6,6 @@ namespace Task2
 {
     class GoodPupil : Pupil
     {
-        public GoodPupil(string pupilFullName) : base(pupilFullName)
-        {
-
-        }
-
         public override void Study()
         {
             Console.ForegroundColor = ConsoleColor.Blue;
@@ -21,6 +16,8 @@ namespace Task2
             Console.ResetColor();
         }
 
+        public string FullName { get { return fullName; } }
+        
         protected override void Read()
         {
             Console.Write(" читает без запинки; ");

@@ -7,18 +7,18 @@ namespace Task2
     class ClassRoom
     {
         ExcellentPupil excellentPupil = new ExcellentPupil();
-        readonly Pupil[] pupil;
+        GoodPupil goodPupil= new GoodPupil();
+
+        Pupil[] pupil = new Pupil[4];
 
         public ClassRoom(Pupil pupil1, Pupil pupil2)
         {
-            pupil = new Pupil[2];
             pupil[0] = pupil1;
             pupil[1] = pupil2;
         }
 
         public ClassRoom(Pupil pupil1, Pupil pupil2, Pupil pupil3)
         {
-            pupil = new Pupil[3];
             pupil[0] = pupil1;
             pupil[1] = pupil2;
             pupil[2] = pupil3;
@@ -26,7 +26,6 @@ namespace Task2
 
         public ClassRoom(Pupil pupil1, Pupil pupil2, Pupil pupil3, Pupil pupil4)
         {
-            pupil = new Pupil[4];
             pupil[0] = pupil1;
             pupil[1] = pupil2;
             pupil[2] = pupil3;
@@ -35,10 +34,27 @@ namespace Task2
 
         public void GetPupilInformation()
         {
-            switch (pupil)
+            for (int i = 0; i < pupil.Length; i++)
             {
-                default:
-                    break;
+                switch (excellentPupil.FullName)
+                {
+                    case "Елена Громова":
+                        excellentPupil.Study();
+                        break;
+                    case "Матвей Шимаев":
+                        excellentPupil.Study();
+                        break;
+                    case "Тамара Ермолова":
+                        excellentPupil.Study();
+                        break;
+                    case "Николай Терещенко":
+                        excellentPupil.Study();
+                        break;
+                    default:
+                        Console.WriteLine("Ученик не найдем в базе данных.");
+                        break;
+                }
+
             }
         }
     }
