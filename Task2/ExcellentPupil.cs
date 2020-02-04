@@ -15,7 +15,6 @@ namespace Task2
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write($"{fullName}");
-            Console.ResetColor();
             Read();
             Write();
             Relax();
