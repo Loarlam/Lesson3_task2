@@ -6,7 +6,7 @@ namespace Task2
 {
     class Pupil
     {
-        protected string fullName;
+        string fullName;
 
         public Pupil()
         {
@@ -17,6 +17,8 @@ namespace Task2
         {
             fullName = pupilFullName;
         }
+
+        public string FullName { get { return fullName; } }
 
         public virtual void Study()
         {

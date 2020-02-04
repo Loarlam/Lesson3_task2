@@ -9,14 +9,12 @@ namespace Task2
         public override void Study()
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.Write($"{fullName}");
+            Console.Write($"{base.FullName}");
             Read();
             Write();
             Relax();
             Console.ResetColor();
         }
-
-        public string FullName{ get { return fullName; } }
 
         protected override void Read()
         {
@@ -30,7 +28,7 @@ namespace Task2
 
         protected override void Relax()
         {
-            Console.Write("занимается с репетиторами; ходит в бассейн; интересуется устройством вселенной");
+            Console.WriteLine("занимается с репетиторами; ходит в бассейн; интересуется устройством вселенной");
         }
     }
 }

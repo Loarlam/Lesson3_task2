@@ -8,6 +8,7 @@ namespace Task2
     {
         ExcellentPupil excellentPupil = new ExcellentPupil();
         GoodPupil goodPupil= new GoodPupil();
+        BadPupil badPupil = new BadPupil();
 
         Pupil[] pupil = new Pupil[4];
 
@@ -36,16 +37,16 @@ namespace Task2
         {
             for (int i = 0; i < pupil.Length; i++)
             {
-                switch (excellentPupil.FullName)
+                switch (pupil[i].FullName)
                 {
                     case "Елена Громова":
                         excellentPupil.Study();
                         break;
                     case "Матвей Шимаев":
-                        excellentPupil.Study();
+                        badPupil.Study();
                         break;
                     case "Тамара Ермолова":
-                        excellentPupil.Study();
+                        goodPupil.Study();
                         break;
                     case "Николай Терещенко":
                         excellentPupil.Study();
