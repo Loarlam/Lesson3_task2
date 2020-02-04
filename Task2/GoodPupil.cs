@@ -1,15 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Task2
 {
     class GoodPupil : Pupil
     {
+        string fullNameOfGoodPupil;
+
+        public string FullNameOfGoodPupil { set => fullNameOfGoodPupil = value; }
+
         public override void Study()
         {
+            Console.WriteLine($"{fullNameOfGoodPupil}:");
             Console.ForegroundColor = ConsoleColor.Blue;
-            Console.Write($"{base.FullName}");
             Read();
             Write();
             Relax();
@@ -18,17 +20,17 @@ namespace Task2
 
         protected override void Read()
         {
-            Console.Write(" читает, но с редкими ошибками в словах; ");
+            Console.WriteLine("- читает, но с редкими ошибками в словах;");
         }
 
         protected override void Write()
         {
-            Console.Write("пишет, но с редкими ошибками; ");
+            Console.WriteLine("- пишет, но с редкими ошибками;");
         }
 
         protected override void Relax()
         {
-            Console.WriteLine(" ходит на секцию баскетбола; любит собирать lego");
+            Console.WriteLine("- ходит на секцию баскетбола; любит собирать lego\n");
         }
     }
 }

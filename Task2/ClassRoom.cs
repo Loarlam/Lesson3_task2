@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Task2
 {
     class ClassRoom
     {
-        ExcellentPupil excellentPupil = new ExcellentPupil();
-        GoodPupil goodPupil= new GoodPupil();
-        BadPupil badPupil = new BadPupil();
-
-        Pupil[] pupil = new Pupil[4];
+        readonly ExcellentPupil excellentPupil = new ExcellentPupil();
+        readonly GoodPupil goodPupil = new GoodPupil();
+        readonly BadPupil badPupil = new BadPupil();
+        readonly Pupil[] pupil = new Pupil[4];
 
         public ClassRoom(Pupil pupil1, Pupil pupil2)
         {
@@ -40,15 +37,19 @@ namespace Task2
                 switch (pupil[i].FullName)
                 {
                     case "Елена Громова":
+                        excellentPupil.FullNameOfPupil = pupil[i].FullName;
                         excellentPupil.Study();
                         break;
                     case "Матвей Шимаев":
+                        badPupil.FullNameOfBadPupil = pupil[i].FullName;
                         badPupil.Study();
                         break;
                     case "Тамара Ермолова":
+                        goodPupil.FullNameOfGoodPupil = pupil[i].FullName;
                         goodPupil.Study();
                         break;
                     case "Николай Терещенко":
+                        excellentPupil.FullNameOfPupil = pupil[i].FullName;
                         excellentPupil.Study();
                         break;
                     default:

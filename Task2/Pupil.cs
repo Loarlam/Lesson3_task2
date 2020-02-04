@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Task2
 {
     class Pupil
     {
-        string fullName;
+        readonly string fullNameOfPupil;
 
         public Pupil()
         {
@@ -15,15 +13,15 @@ namespace Task2
 
         public Pupil(string pupilFullName)
         {
-            fullName = pupilFullName;
+            fullNameOfPupil = pupilFullName;
         }
 
-        public string FullName { get { return fullName; } }
+        public string FullName => fullNameOfPupil;
 
         public virtual void Study()
         {
+            Console.WriteLine($"{fullNameOfPupil}:");
             Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.Write($"{fullName}");
             Read();
             Write();
             Relax();
@@ -32,17 +30,17 @@ namespace Task2
 
         protected virtual void Read()
         {
-            Console.Write(" умею читать; ");
+            Console.WriteLine("- умею читать;");
         }
 
         protected virtual void Write()
         {
-            Console.Write("пишу без ошибок; ");
+            Console.WriteLine("- пишу без ошибок;");
         }
 
         protected virtual void Relax()
         {
-            Console.Write("занимаюсь всем на свете, и всё успеваю!");
+            Console.WriteLine("- занимаюсь всем на свете, и всё успеваю!\n");
         }
     }
 }
