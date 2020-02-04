@@ -8,7 +8,10 @@ namespace Task2
     {
         public virtual void Study()
         {
-
+            //Тут я напишу что-то, 
+            //чего не будет в классах 
+            //excelent, good, bad.
+            //Затем вызову из этих классов base.Study()
         }
 
         public virtual void Read()
