@@ -7,15 +7,18 @@
 Конструктор класса ClassRoom принимает аргументы типа Pupil, класс должен состоять из 4 учеников. 
 Предусмотрите возможность того, что пользователь может передать 2 или 3 аргумента.  
 Выведите информацию о том, как все ученики экземпляра класса ClassRoom умеют учиться, читать, писать, отдыхать.  
- */
+*/
 using System;
 
 namespace Task2
 {
     class Program
     {
+        ClassRoom classRoom;
+        Pupil pupil;
+
         static void Main(string[] args)
-        {
+        {         
             Console.ReadKey();
         }
     }

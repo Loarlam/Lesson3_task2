@@ -6,6 +6,13 @@ namespace Task2
 {
     class Pupil
     {
+        readonly protected string fullName;
+
+        public Pupil(string pupilFullName)
+        {
+            fullName = pupilFullName;
+        }
+
         public virtual void Study()
         {
             //Тут я напишу что-то, 
@@ -14,17 +21,17 @@ namespace Task2
             //Затем вызову из этих классов base.Study()
         }
 
-        public virtual void Read()
+        protected virtual void Read()
         {
 
         }
 
-        public virtual void Write()
+        protected virtual void Write()
         {
 
         }
 
-        public virtual void Relax()
+        protected virtual void Relax()
         {
 
         }

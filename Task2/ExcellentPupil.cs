@@ -4,16 +4,16 @@ using System.Text;
 
 namespace Task2
 {
-    class GoodPupil : Pupil
+    class ExcellentPupil : Pupil
     {
-        public GoodPupil(string pupilFullName) : base(pupilFullName)
+        public ExcellentPupil(string pupilFullName): base(pupilFullName)
         {
 
         }
 
         public override void Study()
         {
-            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write($"{fullName}");
             Console.ResetColor();
             Read();
@@ -28,12 +28,12 @@ namespace Task2
 
         protected override void Write()
         {
-            Console.Write("пишет, но с редкими ошибками; ");
+            Console.Write("пишет без ошибок; ");
         }
 
         protected override void Relax()
         {
-            Console.Write(" ходит на секцию баскетбола; любит собирать lego");
+            Console.Write("занимается с репетиторами; ходит в бассейн; интересуется устройством вселенной");
         }
     }
 }

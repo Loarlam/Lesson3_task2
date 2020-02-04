@@ -6,24 +6,34 @@ namespace Task2
 {
     class BadPupil: Pupil
     {
+        public BadPupil(string pupilFullName): base(pupilFullName)
+        {
+
+        }
+
         public override void Study()
         {
-
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write($"{fullName}");
+            Console.ResetColor();
+            Read();
+            Write();
+            Relax();
         }
 
-        public override void Read()
+        protected override void Read()
         {
-
+            Console.Write(" читает плохо; ");
         }
 
-        public override void Write()
+        protected override void Write()
         {
-
+            Console.Write("пишет с ошибками; ");
         }
 
-        public override void Relax()
+        protected override void Relax()
         {
-
+            Console.Write("любит много гулять; катается на поездах");
         }
     }
 }
