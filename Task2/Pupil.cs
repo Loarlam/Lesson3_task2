@@ -6,7 +6,12 @@ namespace Task2
 {
     class Pupil
     {
-        readonly protected string fullName;
+        protected string fullName;
+
+        public Pupil()
+        {
+
+        }
 
         public Pupil(string pupilFullName)
         {
@@ -15,25 +20,27 @@ namespace Task2
 
         public virtual void Study()
         {
-            //Тут я напишу что-то, 
-            //чего не будет в классах 
-            //excelent, good, bad.
-            //Затем вызову из этих классов base.Study()
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.Write($"{fullName}");
+            Read();
+            Write();
+            Relax();
+            Console.ResetColor();
         }
 
         protected virtual void Read()
         {
-
+            Console.Write(" умею читать; ");
         }
 
         protected virtual void Write()
         {
-
+            Console.Write("пишу без ошибок; ");
         }
 
         protected virtual void Relax()
         {
-
+            Console.Write("занимаюсь всем на свете, и всё успеваю!");
         }
     }
 }

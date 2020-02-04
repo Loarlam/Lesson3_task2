@@ -6,11 +6,6 @@ namespace Task2
 {
     class ExcellentPupil : Pupil
     {
-        public ExcellentPupil(string pupilFullName): base(pupilFullName)
-        {
-
-        }
-
         public override void Study()
         {
             Console.ForegroundColor = ConsoleColor.Yellow;

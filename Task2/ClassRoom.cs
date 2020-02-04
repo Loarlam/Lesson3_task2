@@ -6,7 +6,7 @@ namespace Task2
 {
     class ClassRoom
     {
-        /*ФИО - в pupil; через case выясняем, как учится ученик*/
+        ExcellentPupil excellentPupil = new ExcellentPupil();
         readonly Pupil[] pupil;
 
         public ClassRoom(Pupil pupil1, Pupil pupil2)
@@ -31,6 +31,15 @@ namespace Task2
             pupil[1] = pupil2;
             pupil[2] = pupil3;
             pupil[3] = pupil4;
+        }
+
+        public void GetPupilInformation()
+        {
+            switch (pupil)
+            {
+                default:
+                    break;
+            }
         }
     }
 }
