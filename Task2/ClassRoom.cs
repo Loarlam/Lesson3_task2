@@ -10,7 +10,7 @@ namespace Task2
         readonly Pupil[] pupil = new Pupil[4];
 
         int addedPupilsToList = 0;
-        string firstFullNamePupilFromList1, secondFullNamePupilFromList2;
+        //string firstFullNamePupilFromList1, secondFullNamePupilFromList2;
 
         public ClassRoom(Pupil pupil1, Pupil pupil2)
         {
@@ -39,12 +39,13 @@ namespace Task2
         Pupil ChooseFromPupilsList()
         {
             //Может стоит изменить на логическое или?
-            if (addedPupilsToList != 0 && addedPupilsToList != 1)
+            if (addedPupilsToList == 2)
             {
-                if (pupil[2] != null)
-                {
-
-                }
+                //if (pupil[2] != null)
+                //{
+                //}
+                Console.Write($"\nИмя и фамилия 2 ребенка через пробел = ");
+                return new Pupil(Console.ReadLine());
             }
 
             if (pupil[2] == null)
@@ -56,11 +57,13 @@ namespace Task2
                 {
                     case 1:
                         Console.Write("\nИмя и фамилия ребенка через пробел = ");
-                        firstFullNamePupilFromList1 = Console.ReadLine();
-                        return new Pupil(firstFullNamePupilFromList1);
+                        //firstFullNamePupilFromList1 = Console.ReadLine();
+                        //return new Pupil(firstFullNamePupilFromList1);
+                        return new Pupil(Console.ReadLine());
                     case 2:
-                        if (pupil[2] != null) return new Pupil(secondFullNamePupilFromList2);
-                        else return new Pupil(firstFullNamePupilFromList1);
+                        //if (pupil[2] != null) return new Pupil(secondFullNamePupilFromList2);
+                        Console.Write($"\nИмя и фамилия 1 ребенка через пробел = ");
+                        return new Pupil(Console.ReadLine());
                     default:
                         return null;
                 }
