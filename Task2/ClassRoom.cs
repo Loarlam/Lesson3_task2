@@ -80,7 +80,7 @@ namespace Task2
 
         public void GetPupilInformation()
         {
-            //Узнать, как вывести длину массива без нулевого элемента
+            Console.WriteLine("\nСписок учеников:");
             for (int i = 0; i < pupil.Length; i++)
             {
                 if (pupil[i] != null)
@@ -88,27 +88,22 @@ namespace Task2
                     switch (pupil[i].FullName)
                     {
                         case "Елена Громова":
-                            Console.WriteLine();
                             excellentPupil.FullNameOfPupil = pupil[i].FullName;
                             excellentPupil.Study();
                             break;
                         case "Матвей Шимаев":
-                            Console.WriteLine();
                             badPupil.FullNameOfBadPupil = pupil[i].FullName;
                             badPupil.Study();
                             break;
                         case "Тамара Ермолова":
-                            Console.WriteLine();
                             goodPupil.FullNameOfGoodPupil = pupil[i].FullName;
                             goodPupil.Study();
                             break;
                         case "Николай Терещенко":
-                            Console.WriteLine();
                             excellentPupil.FullNameOfPupil = pupil[i].FullName;
                             excellentPupil.Study();
                             break;
                         default:
-                            Console.WriteLine();
                             goodPupil.FullNameOfGoodPupil = pupil[i].FullName;
                             goodPupil.Study();
                             continue;
