@@ -22,7 +22,7 @@ namespace Task2
                 new Pupil("Тамара Ермолова"),
                 new Pupil("Николай Терещенко") };
             //Экземпляр classRoom типа ClassRoom, на 25 строке, позволяет передавать от 2 до 4 аргументов в пользовательский конструктор
-            ClassRoom classRoom = new ClassRoom(pupil[0], pupil[1], pupil[2], pupil[3]);
+            ClassRoom classRoom = new ClassRoom(pupil[0], pupil[1]);
 
             classRoom.GetPupilInformation();
 

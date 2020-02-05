@@ -61,7 +61,7 @@ namespace Task2
                 default:
                     if (addedPupilsToList == 2)
                     {
-                        Console.Write("\nИмя и фамилия 2 ребенка через пробел = ");
+                        Console.Write("Имя и фамилия 2 ребенка через пробел = ");
                         return new Pupil(Console.ReadLine());
                     }
                     Console.WriteLine("Вы - учитель.\nВ вашем классе три ученика. На перемене играет ещё один.\n");
