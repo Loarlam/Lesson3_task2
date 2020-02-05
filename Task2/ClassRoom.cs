@@ -37,12 +37,6 @@ namespace Task2
 
         Pupil ChooseFromPupilsList()
         {
-            if (addedPupilsToList == 2)
-            {
-                Console.Write($"\nИмя и фамилия 2 ребенка через пробел = ");
-                return new Pupil(Console.ReadLine());
-            }
-
             if (pupil[2] == null)
             {
                 Console.WriteLine("Вы - учитель.\nВ вашем классе два ученика. На перемене играют ещё двое.\n");
@@ -63,6 +57,12 @@ namespace Task2
 
             if (pupil[2] != null)
             {
+                if (addedPupilsToList == 2)
+                {
+                    Console.Write($"\nИмя и фамилия 2 ребенка через пробел = ");
+                    return new Pupil(Console.ReadLine());
+                }
+
                 Console.WriteLine("Вы - учитель.\nВ вашем классе три ученика. На перемене играет ещё один.\n");
                 Console.Write("Позвать играющего на перемене?\n0 - нет\n1 - да\nМой ответ = ");
                 addedPupilsToList = Int32.Parse(Console.ReadLine());
@@ -88,7 +88,7 @@ namespace Task2
                     switch (pupil[i].FullName)
                     {
                         case "Елена Громова":
-                            excellentPupil.FullNameOfPupil = pupil[i].FullName;
+                            excellentPupil.FullNameOfExcellentPupil = pupil[i].FullName;
                             excellentPupil.Study();
                             break;
                         case "Матвей Шимаев":
@@ -100,13 +100,22 @@ namespace Task2
                             goodPupil.Study();
                             break;
                         case "Николай Терещенко":
-                            excellentPupil.FullNameOfPupil = pupil[i].FullName;
+                            excellentPupil.FullNameOfExcellentPupil = pupil[i].FullName;
                             excellentPupil.Study();
                             break;
                         default:
-                            goodPupil.FullNameOfGoodPupil = pupil[i].FullName;
-                            goodPupil.Study();
-                            continue;
+                            if (i==2)
+                            {
+                                goodPupil.FullNameOfGoodPupil = pupil[i].FullName;
+                                goodPupil.Study();
+                                continue;
+                            }
+                            else
+                            {
+                                excellentPupil.FullNameOfExcellentPupil = pupil[i].FullName;
+                                excellentPupil.Study();
+                                continue;
+                            }                            
                     }
                 }
             }

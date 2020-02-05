@@ -6,7 +6,7 @@ namespace Task2
     {
         string fullNameOfExcellentPupil;
 
-        public string FullNameOfPupil { set => fullNameOfExcellentPupil = value; }
+        public string FullNameOfExcellentPupil { set => fullNameOfExcellentPupil = value; }
 
         public override void Study()
         {
