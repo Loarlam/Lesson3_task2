@@ -9,7 +9,7 @@ namespace Task2
         BadPupil badPupil = new BadPupil();
         readonly Pupil[] pupil = new Pupil[4];
 
-        int addedPupilsToList;
+        int addedPupilsToList = 0;
         string firstFullNamePupilFromList1, secondFullNamePupilFromList2;
 
         public ClassRoom(Pupil pupil1, Pupil pupil2)
@@ -38,14 +38,25 @@ namespace Task2
 
         Pupil ChooseFromPupilsList()
         {
+            //Может стоит изменить на логическое или?
+            if (addedPupilsToList != 0 && addedPupilsToList != 1)
+            {
+                if (pupil[2] != null)
+                {
+
+                }
+            }
+
             if (pupil[2] == null)
             {
-                Console.WriteLine($"Вы - учитель.\nВ вашем классе {pupil.Length} ученика. На перемене играют ещё двое.\n");
+                Console.WriteLine("Вы - учитель.\nВ вашем классе два ученика. На перемене играют ещё двое.\n");
                 Console.Write("Позвать играющих на перемене?\n0 - нет\n1 - одного\n2 - обоих\nМой ответ = ");
                 addedPupilsToList = Int32.Parse(Console.ReadLine());
                 switch (addedPupilsToList)
                 {
                     case 1:
+                        Console.Write("\nИмя и фамилия ребенка через пробел = ");
+                        firstFullNamePupilFromList1 = Console.ReadLine();
                         return new Pupil(firstFullNamePupilFromList1);
                     case 2:
                         if (pupil[2] != null) return new Pupil(secondFullNamePupilFromList2);
@@ -73,9 +84,9 @@ namespace Task2
 
             //if (pupil[3] == null)
             //{
-            //    Console.WriteLine($"Вы - учитель.\nВ вашем классе {pupil.Length} человека. На перемене играют ещё двое.\n");
+            //    Console.WriteLine("Вы - учитель.\nВ вашем классе три ученика. На перемене играет ещё один.\n");
 
-            //    Console.Write("Позвать играющих на перемене?\n0 - нет\n1 - одного\n2 - обоих\nМой ответ = ");
+            //    Console.Write("Позвать играющего на перемене?\n0 - нет\n1 - да\nМой ответ = ");
             //    addedPupilsToList = Int32.Parse(Console.ReadLine());
             //    if (addedPupilsToList != 0)
             //    {
@@ -108,6 +119,7 @@ namespace Task2
 
         public void GetPupilInformation()
         {
+            //Узнать, как вывести длину массива без нулевого элемента
             for (int i = 0; i < pupil.Length; i++)
             {
                 switch (pupil[i].FullName)
