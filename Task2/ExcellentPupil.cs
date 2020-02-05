@@ -30,7 +30,7 @@ namespace Task2
 
         protected override void Relax()
         {
-            Console.WriteLine("- занимается с репетиторами; ходит в бассейн; интересуется устройством вселенной\n");
+            Console.WriteLine("- занимается с репетиторами; ходит в бассейн;");
         }
     }
 }
