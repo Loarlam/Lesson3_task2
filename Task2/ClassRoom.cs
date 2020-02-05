@@ -9,7 +9,7 @@ namespace Task2
         BadPupil badPupil = new BadPupil();
         readonly Pupil[] pupil = new Pupil[4];
 
-        int addedPupilsToList, counter=0;
+        int addedPupilsToList;
         string firstFullNamePupilFromList1, secondFullNamePupilFromList2;
 
         public ClassRoom(Pupil pupil1, Pupil pupil2)
@@ -38,42 +38,72 @@ namespace Task2
 
         Pupil ChooseFromPupilsList()
         {
-            if (counter!=1)
+            if (pupil[2] == null)
             {
-                Console.WriteLine($"Вы - учитель.\nВ вашем классе {pupil.Length} человека. На перемене играют ещё двое.\n");
-                //Если в конструкторе нужно доавить четвертого, то заблокировать возможность добавлять двоих учеников
-                Console.Write("Позвать играющи на перемене?\n0 - нет\n1 - одного\n2 - обоих\nМой ответ = ");
+                Console.WriteLine($"Вы - учитель.\nВ вашем классе {pupil.Length} ученика. На перемене играют ещё двое.\n");
+                Console.Write("Позвать играющих на перемене?\n0 - нет\n1 - одного\n2 - обоих\nМой ответ = ");
                 addedPupilsToList = Int32.Parse(Console.ReadLine());
-                if (addedPupilsToList != 0)
+                switch (addedPupilsToList)
                 {
-                    if (addedPupilsToList == 1)
-                    {
-                        Console.Write("\nИмя и фамилия ребенка через пробел = ");
-                        firstFullNamePupilFromList1 = Console.ReadLine();
-                    }
-                    else
-                    {
-                        Console.Write($"\nИмя и фамилия 1 ребенка через пробел = ");
-                        firstFullNamePupilFromList1 = Console.ReadLine();
-                        Console.Write($"\nИмя и фамилия 2 ребенка через пробел = ");
-                        secondFullNamePupilFromList2 = Console.ReadLine();
-                    }
+                    case 1:
+                        return new Pupil(firstFullNamePupilFromList1);
+                    case 2:
+                        if (pupil[2] != null) return new Pupil(secondFullNamePupilFromList2);
+                        else return new Pupil(firstFullNamePupilFromList1);
+                    default:
+                        return null;
                 }
+                //if (addedPupilsToList != 0)
+                //{
+                //    if (addedPupilsToList == 1)
+                //    {
+                //        Console.Write("\nИмя и фамилия ребенка через пробел = ");
+                //        firstFullNamePupilFromList1 = Console.ReadLine();
+                //    }
+                //    else
+                //    {
+                //        Console.Write($"\nИмя и фамилия 1 ребенка через пробел = ");
+                //        firstFullNamePupilFromList1 = Console.ReadLine();
+                //        Console.Write($"\nИмя и фамилия 2 ребенка через пробел = ");
+                //        secondFullNamePupilFromList2 = Console.ReadLine();
+                //    }
+                //}
             }
-            counter++;
+            return null;
 
-            switch (pupil.Length)
-            {
-                case 3:
-                    if (pupil.Length == 3)
-                        return new Pupil(firstFullNamePupilFromList1); 
-                    else
-                        return new Pupil(secondFullNamePupilFromList2);                     
-                case 4:
-                    return new Pupil(firstFullNamePupilFromList1);                 
-                default:
-                    return null;
-            }
+            //if (pupil[3] == null)
+            //{
+            //    Console.WriteLine($"Вы - учитель.\nВ вашем классе {pupil.Length} человека. На перемене играют ещё двое.\n");
+
+            //    Console.Write("Позвать играющих на перемене?\n0 - нет\n1 - одного\n2 - обоих\nМой ответ = ");
+            //    addedPupilsToList = Int32.Parse(Console.ReadLine());
+            //    if (addedPupilsToList != 0)
+            //    {
+            //        if (addedPupilsToList == 1)
+            //        {
+            //            Console.Write("\nИмя и фамилия ребенка через пробел = ");
+            //            firstFullNamePupilFromList1 = Console.ReadLine();
+            //        }
+            //        else
+            //        {
+            //            Console.Write($"\nИмя и фамилия 1 ребенка через пробел = ");
+            //            firstFullNamePupilFromList1 = Console.ReadLine();
+            //            Console.Write($"\nИмя и фамилия 2 ребенка через пробел = ");
+            //            secondFullNamePupilFromList2 = Console.ReadLine();
+            //        }
+            //    }
+            //}
+
+            //switch (addedPupilsToList)
+            //{
+            //    case 1:
+            //            return new Pupil(firstFullNamePupilFromList1); 
+            //    case 2:
+            //        if (pupil[2] != null) return new Pupil(secondFullNamePupilFromList2);
+            //        else return new Pupil(firstFullNamePupilFromList1);
+            //    default:
+            //        return null;
+            //}
         }
 
         public void GetPupilInformation()

@@ -16,13 +16,12 @@ namespace Task2
     {
         static void Main(string[] args)
         {
-            //int addedPupils;
             Pupil[] pupil = new Pupil[4];
             pupil[0] = new Pupil("Елена Громова");
             pupil[1] = new Pupil("Матвей Шимаев");
             pupil[2] = new Pupil("Тамара Ермолова");
             pupil[3] = new Pupil("Николай Терещенко");
-            ClassRoom classRoom = new ClassRoom(pupil[0], pupil[1], pupil[2]);
+            ClassRoom classRoom = new ClassRoom(pupil[0], pupil[1]);
 
             classRoom.GetPupilInformation();
 
