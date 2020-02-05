@@ -20,7 +20,7 @@ namespace Task2
 
         public virtual void Study()
         {
-            Console.WriteLine($"{fullNameOfPupil}:");
+            Console.WriteLine($"{fullNameOfPupil} (говорит о себе):");
             Console.ForegroundColor = ConsoleColor.Magenta;
             Read();
             Write();

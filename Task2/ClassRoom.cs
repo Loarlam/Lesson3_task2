@@ -7,6 +7,7 @@ namespace Task2
         ExcellentPupil excellentPupil = new ExcellentPupil();
         GoodPupil goodPupil = new GoodPupil();
         BadPupil badPupil = new BadPupil();
+
         readonly Pupil[] pupil = new Pupil[4];
 
         int addedPupilsToList = 0;
@@ -16,7 +17,10 @@ namespace Task2
             pupil[0] = pupil1;
             pupil[1] = pupil2;
             pupil[2] = ChooseFromPupilsList();
-            pupil[3] = ChooseFromPupilsList();
+            if (addedPupilsToList == 0 || addedPupilsToList == 1)
+                pupil[3] = null;
+            else
+                pupil[3] = ChooseFromPupilsList();
         }
 
         public ClassRoom(Pupil pupil1, Pupil pupil2, Pupil pupil3)
@@ -37,45 +41,41 @@ namespace Task2
 
         Pupil ChooseFromPupilsList()
         {
-            if (pupil[2] == null)
+            switch (pupil[2])
             {
-                Console.WriteLine("Вы - учитель.\nВ вашем классе два ученика. На перемене играют ещё двое.\n");
-                Console.Write("Позвать играющих на перемене?\n0 - нет\n1 - одного\n2 - обоих\nМой ответ = ");
-                addedPupilsToList = Int32.Parse(Console.ReadLine());
-                switch (addedPupilsToList)
-                {
-                    case 1:
-                        Console.Write("\nИмя и фамилия ребенка через пробел = ");
+                case null:
+                    Console.WriteLine("Вы - учитель.\nВ вашем классе два ученика. На перемене играют ещё двое.\n");
+                    Console.Write("Позвать играющих на перемене?\n0 - нет\n1 - одного\n2 - обоих\nМой ответ = ");
+                    addedPupilsToList = Int32.Parse(Console.ReadLine());
+                    switch (addedPupilsToList)
+                    {
+                        case 1:
+                            Console.Write("\nИмя и фамилия ребенка через пробел = ");
+                            return new Pupil(Console.ReadLine());
+                        case 2:
+                            Console.Write("\nИмя и фамилия 1 ребенка через пробел = ");
+                            return new Pupil(Console.ReadLine());
+                        default:
+                            return null;
+                    }
+                default:
+                    if (addedPupilsToList == 2)
+                    {
+                        Console.Write("\nИмя и фамилия 2 ребенка через пробел = ");
                         return new Pupil(Console.ReadLine());
-                    case 2:
-                        Console.Write($"\nИмя и фамилия 1 ребенка через пробел = ");
-                        return new Pupil(Console.ReadLine());
-                    default:
-                        return null;
-                }
+                    }
+                    Console.WriteLine("Вы - учитель.\nВ вашем классе три ученика. На перемене играет ещё один.\n");
+                    Console.Write("Позвать играющего на перемене?\n0 - нет\n1 - да\nМой ответ = ");
+                    addedPupilsToList = Int32.Parse(Console.ReadLine());
+                    switch (addedPupilsToList)
+                    {
+                        case 1:
+                            Console.Write("\nИмя и фамилия ребенка через пробел = ");
+                            return new Pupil(Console.ReadLine());
+                        default:
+                            return null;
+                    }
             }
-
-            if (pupil[2] != null)
-            {
-                if (addedPupilsToList == 2)
-                {
-                    Console.Write($"\nИмя и фамилия 2 ребенка через пробел = ");
-                    return new Pupil(Console.ReadLine());
-                }
-
-                Console.WriteLine("Вы - учитель.\nВ вашем классе три ученика. На перемене играет ещё один.\n");
-                Console.Write("Позвать играющего на перемене?\n0 - нет\n1 - да\nМой ответ = ");
-                addedPupilsToList = Int32.Parse(Console.ReadLine());
-                switch (addedPupilsToList)
-                {
-                    case 1:
-                        Console.Write("\nИмя и фамилия ребенка через пробел = ");
-                        return new Pupil(Console.ReadLine());
-                    default:
-                        return null;
-                }
-            }
-            return null;
         }
 
         public void GetPupilInformation()
@@ -104,7 +104,7 @@ namespace Task2
                             excellentPupil.Study();
                             break;
                         default:
-                            if (i==2)
+                            if (i == 2)
                             {
                                 goodPupil.FullNameOfGoodPupil = pupil[i].FullName;
                                 goodPupil.Study();
@@ -115,7 +115,7 @@ namespace Task2
                                 excellentPupil.FullNameOfExcellentPupil = pupil[i].FullName;
                                 excellentPupil.Study();
                                 continue;
-                            }                            
+                            }
                     }
                 }
             }

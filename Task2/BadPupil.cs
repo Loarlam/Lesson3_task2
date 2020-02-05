@@ -10,7 +10,7 @@ namespace Task2
 
         public override void Study()
         {
-            Console.WriteLine($"{fullNameOfBadPupil}:");
+            Console.WriteLine($"{fullNameOfBadPupil} (троечник):");
             Console.ForegroundColor = ConsoleColor.Red;
             Read();
             Write();
